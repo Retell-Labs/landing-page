@@ -1,31 +1,21 @@
-
-import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import ProblemSection from '@/components/ProblemSection';
 import Features from '@/components/Features';
+import SocialProof from '@/components/SocialProof';
 import HowItWorks from '@/components/HowItWorks';
-import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
-import TrustSecurity from '@/components/TrustSecurity';
-import FAQ from '@/components/FAQ';
-import FinalCTA from '@/components/FinalCTA';
+import DownloadCTA from '@/components/DownloadCTA';
 import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground noise-bg">
       <Header />
       <main>
         <HeroSection />
         <Features />
-        <ProblemSection />
+        <SocialProof />
         <HowItWorks />
-        <Testimonials />
-        <Pricing />
-        <TrustSecurity />
-        <FAQ />
-        <FinalCTA />
+        <DownloadCTA />
       </main>
       <Footer />
     </div>

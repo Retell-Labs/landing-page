@@ -1,179 +1,100 @@
-
-import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import Logo from './Logo';
-import { Menu, X, CircleDot, BookOpen, DollarSign, Sun, Moon } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
-import { Switch } from '@/components/ui/switch';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
-  const [activePage, setActivePage] = useState('features');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false); // Default to light mode
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
-  useEffect(() => {
-    // Apply the theme to the document when it changes
-    if (isDarkMode) {
-      document.documentElement.classList.remove('light-mode');
-      document.documentElement.classList.add('dark-mode');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-      document.documentElement.classList.add('light-mode');
-    }
-  }, [isDarkMode]);
-
-  useEffect(() => {
-    // Handle scroll to show/hide header background
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (page: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    setActivePage(page);
-    const element = document.getElementById(page);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setMobileMenuOpen(false);
-  };
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className={cn(
-      "sticky top-0 z-50 pt-2 transition-all duration-300 border-b border-border/10",
-      isScrolled ? "bg-background/80 backdrop-blur-md border-border/30" : ""
-    )}>
-      <header className="w-full py-1.5 px-4 flex items-center justify-between">
-        <div>
-          <Logo />
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md">
+      <nav className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 group" aria-label="Retell Home">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <span className="font-young-serif text-xl text-foreground">Retell</span>
+        </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8">
+          <a
+            href="/#features"
+            className={`text-sm font-medium transition-colors hover:text-foreground ${
+              isActive('/') ? 'text-foreground' : 'text-muted-foreground'
+            }`}
+          >
+            Features
+          </a>
+          <Link
+            to="/blog"
+            className={`text-sm font-medium transition-colors hover:text-foreground ${
+              location.pathname.startsWith('/blog') ? 'text-foreground' : 'text-muted-foreground'
+            }`}
+          >
+            Blog
+          </Link>
+          <a
+            href="#download"
+            className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-2 text-sm font-medium transition-all hover:bg-foreground/90 hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Get Retell
+          </a>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile hamburger */}
         <button
-          className="md:hidden p-3 rounded-2xl text-muted-foreground hover:text-foreground"
-          onClick={toggleMobileMenu}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-2 -mr-2"
+          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            {mobileOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="8" x2="21" y2="8" />
+                <line x1="3" y1="16" x2="21" y2="16" />
+              </>
+            )}
+          </svg>
         </button>
+      </nav>
 
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2">
-          <div className="rounded-full px-1 py-1 backdrop-blur-md bg-background/80 border border-border shadow-lg">
-            <ToggleGroup type="single" value={activePage} onValueChange={(value) => value && setActivePage(value)}>
-              <ToggleGroupItem
-                value="features"
-                className={cn(
-                  "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === 'features' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                )}
-                onClick={handleNavClick('features')}
-              >
-                <CircleDot size={16} className="inline-block mr-1.5" /> Features
-              </ToggleGroupItem>
-              <ToggleGroupItem
-                value="how-it-works"
-                className={cn(
-                  "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === 'how-it-works' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                )}
-                onClick={handleNavClick('how-it-works')}
-              >
-                <BookOpen size={16} className="inline-block mr-1.5" /> How It Works
-              </ToggleGroupItem>
-              <ToggleGroupItem
-                value="pricing"
-                className={cn(
-                  "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === 'pricing' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                )}
-                onClick={handleNavClick('pricing')}
-              >
-                <DollarSign size={16} className="inline-block mr-1.5" /> Pricing
-              </ToggleGroupItem>
-            </ToggleGroup>
-          </div>
-        </nav>
-
-        {/* Mobile navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-4 right-4 bg-background/95 backdrop-blur-md py-4 px-6 border border-border rounded-2xl shadow-lg z-50">
-            <div className="flex flex-col gap-4">
-              <a
-                href="#features"
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === 'features' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
-                onClick={handleNavClick('features')}
-              >
-                <CircleDot size={16} className="inline-block mr-1.5" /> Features
-              </a>
-              <a
-                href="#how-it-works"
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === 'how-it-works' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
-                onClick={handleNavClick('how-it-works')}
-              >
-                <BookOpen size={16} className="inline-block mr-1.5" /> How It Works
-              </a>
-              <a
-                href="#pricing"
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === 'pricing' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
-                onClick={handleNavClick('pricing')}
-              >
-                <DollarSign size={16} className="inline-block mr-1.5" /> Pricing
-              </a>
-
-              {/* Add theme toggle for mobile */}
-              <div className="flex items-center justify-between px-3 py-2">
-                <span className="text-sm text-muted-foreground">Theme</span>
-                <div className="flex items-center gap-2">
-                  <Moon size={16} className={`${isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-                  <Switch
-                    checked={!isDarkMode}
-                    onCheckedChange={toggleTheme}
-                    className="data-[state=checked]:bg-primary"
-                  />
-                  <Sun size={16} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div className="hidden md:flex items-center gap-4">
-          {/* Theme toggle for desktop */}
-          <div className="flex items-center gap-2 rounded-full px-3 py-2">
-            <Moon size={18} className={`${isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-            <Switch
-              checked={!isDarkMode}
-              onCheckedChange={toggleTheme}
-              className="data-[state=checked]:bg-primary"
-            />
-            <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-          </div>
-          <div className="rounded-full px-1 py-1 backdrop-blur-md bg-background/80 border border-border shadow-lg">
-            <Button variant="ghost" className="px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">Get the App</Button>
-          </div>
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-border px-6 py-4 bg-background space-y-3">
+          <a
+            href="/#features"
+            className="block text-sm font-medium text-foreground py-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            Features
+          </a>
+          <Link
+            to="/blog"
+            className="block text-sm font-medium text-foreground py-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            Blog
+          </Link>
+          <a
+            href="#download"
+            className="block text-center rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium"
+            onClick={() => setMobileOpen(false)}
+          >
+            Get Retell
+          </a>
         </div>
-      </header>
-    </div>
+      )}
+    </header>
   );
 };
 

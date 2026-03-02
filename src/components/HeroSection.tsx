@@ -1,163 +1,112 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import TaskBoard from './TaskBoard';
-import { Loader } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+
 const HeroSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 300);
-    return () => clearTimeout(timer);
+    const el = heroRef.current;
+    if (!el) return;
+    requestAnimationFrame(() => el.classList.add('visible'));
   }, []);
-  return <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
-      {/* Cosmic particle effect (background dots) */}
-      <div className="absolute inset-0 cosmic-grid opacity-30"></div>
 
-      {/* Gradient glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full">
-        <div className="w-full h-full opacity-10 bg-primary blur-[120px]"></div>
-      </div>
+  return (
+    <section className="relative overflow-hidden pt-16 pb-24 md:pt-28 md:pb-36">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="reveal" ref={heroRef}>
+          {/* Badge */}
+          <div className="flex justify-center mb-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              Free on iOS &amp; Android
+            </span>
+          </div>
 
-      <div className={`relative z-10 max-w-4xl text-center space-y-6 transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full bg-muted text-primary">
-            <span className="flex h-2 w-2 rounded-full bg-primary"></span>
-            Now in beta — learn from any video
-          </span>
-        </div>
+          {/* Headline */}
+          <h1 className="font-young-serif text-center text-4xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight max-w-3xl mx-auto">
+            Learn languages from the videos you already love.
+          </h1>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-young-serif tracking-tighter text-balance text-foreground">
-          Learn languages from the videos you already watch.
-        </h1>
+          {/* Subtitle */}
+          <p className="text-center text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mt-6 leading-relaxed">
+            Import any short video or photo. Our AI creates a personalized lesson with vocabulary, pronunciation practice, and spaced repetition.
+          </p>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Import TikToks, YouTube Shorts, or your own photos. Retell's AI turns them into personalized language lessons with vocabulary, pronunciation practice, and spaced repetition.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 items-center">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
-            Start Learning Free
-          </Button>
-          <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
-            See How It Works
-          </Button>
-        </div>
-
-        <div className="pt-6 text-sm text-muted-foreground">
-          Free forever • No credit card required
-        </div>
-      </div>
-
-      {/* Task Manager UI integrated in hero section with glassmorphic effect */}
-      <div className={`w-full max-w-7xl mt-12 z-10 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-        <div className="cosmic-glow relative rounded-xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
-          {/* Dashboard Header */}
-          <div className="bg-card backdrop-blur-md w-full">
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <div className="flex items-center gap-4">
-                <div className="h-8 w-8 rounded-md bg-muted flex items-center justify-center">
-                  <div className="h-3 w-3 rounded-sm bg-foreground"></div>
-                </div>
-                <span className="text-foreground font-medium">Learning Dashboard</span>
+          {/* App Store buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10" id="download">
+            <a
+              href="https://apps.apple.com/app/retell"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-foreground text-background rounded-xl px-6 py-3 transition-all hover:scale-[1.02] active:scale-[0.98] hover:bg-foreground/90"
+              aria-label="Download on the App Store"
+            >
+              <svg width="22" height="26" viewBox="0 0 22 26" fill="currentColor">
+                <path d="M17.05 13.47c-.03-2.75 2.25-4.07 2.35-4.13-1.28-1.87-3.27-2.13-3.98-2.16-1.69-.17-3.31 1-4.17 1-.86 0-2.18-.98-3.59-.95-1.85.03-3.55 1.07-4.5 2.73-1.92 3.33-.49 8.27 1.38 10.97.92 1.33 2.01 2.82 3.44 2.76 1.38-.05 1.9-.89 3.57-.89 1.67 0 2.14.89 3.59.87 1.48-.03 2.43-1.35 3.34-2.69 1.05-1.54 1.49-3.03 1.51-3.11-.03-.01-2.91-1.12-2.94-4.4zM14.33 5.16c.76-.92 1.28-2.2 1.14-3.48-1.1.04-2.43.73-3.22 1.66-.71.82-1.33 2.13-1.16 3.39 1.23.1 2.48-.62 3.24-1.57z"/>
+              </svg>
+              <div className="text-left">
+                <div className="text-[10px] leading-none opacity-80">Download on the</div>
+                <div className="text-base font-semibold leading-tight">App Store</div>
               </div>
+            </a>
 
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  <div className="h-8 w-8 rounded-full bg-muted border-2 border-card"></div>
-                  <div className="h-8 w-8 rounded-full bg-muted/80 border-2 border-card"></div>
-                  <div className="h-8 w-8 rounded-full bg-muted/60 border-2 border-card"></div>
-                  <div className="h-8 w-8 rounded-full bg-muted/40 border-2 border-card flex items-center justify-center text-xs text-foreground">+3</div>
-                </div>
-
-                <div className="h-8 px-3 rounded-md bg-muted flex items-center justify-center text-foreground text-sm">
-                  Share
-                </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.retell.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-foreground text-background rounded-xl px-6 py-3 transition-all hover:scale-[1.02] active:scale-[0.98] hover:bg-foreground/90"
+              aria-label="Get it on Google Play"
+            >
+              <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor">
+                <path d="M0.35 0.63C0.13 0.87 0 1.22 0 1.67v18.66c0 0.45 0.13 0.8 0.35 1.04l0.05 0.05 10.45-10.45v-0.25L0.4 0.58 0.35 0.63z"/>
+                <path d="M14.33 14.44l-3.48-3.48v-0.25l3.48-3.48 0.08 0.04 4.12 2.34c1.18 0.67 1.18 1.76 0 2.43l-4.12 2.34-0.08 0.06z"/>
+                <path d="M14.41 14.38L10.85 10.82 0.35 21.37c0.39 0.41 1.03 0.46 1.76 0.05l12.3-7.04z"/>
+                <path d="M14.41 7.27L2.11 0.23C1.38-0.18 0.74-0.13 0.35 0.28l10.5 10.54 3.56-3.55z"/>
+              </svg>
+              <div className="text-left">
+                <div className="text-[10px] leading-none opacity-80">Get it on</div>
+                <div className="text-base font-semibold leading-tight">Google Play</div>
               </div>
-            </div>
+            </a>
+          </div>
 
-            {/* Dashboard Content */}
-            <div className="flex h-[600px] overflow-hidden">
-              {/* Sidebar */}
-              <div className="w-64 border-r border-border p-4 space-y-4 hidden md:block bg-card">
-                <div className="space-y-2">
-                  <div className="text-xs text-muted-foreground uppercase">Navigation</div>
-                  <div className="space-y-1">
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md bg-muted text-foreground">
-                       <div className="h-3 w-3 rounded-sm bg-foreground"></div>
-                       <span>My Videos</span>
-                     </div>
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
-                       <div className="h-3 w-3 rounded-sm bg-muted-foreground/30"></div>
-                       <span>Vocabulary Bank</span>
-                     </div>
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
-                       <div className="h-3 w-3 rounded-sm bg-muted-foreground/30"></div>
-                       <span>Pronunciation Lab</span>
-                     </div>
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
-                       <div className="h-3 w-3 rounded-sm bg-muted-foreground/30"></div>
-                       <span>Daily Review</span>
-                     </div>
+          {/* Phone mockup */}
+          <div className="mt-16 md:mt-20 flex justify-center">
+            <div className="relative w-[280px] h-[560px] md:w-[320px] md:h-[640px]">
+              {/* Phone frame */}
+              <div className="absolute inset-0 rounded-[3rem] border-[8px] border-foreground/10 bg-card shadow-2xl shadow-foreground/5 overflow-hidden">
+                {/* Status bar */}
+                <div className="h-12 bg-card flex items-center justify-center">
+                  <div className="w-20 h-5 rounded-full bg-foreground/10" />
+                </div>
+                {/* Screen content placeholder */}
+                <div className="px-5 pt-4 space-y-4">
+                  <div className="w-28 h-6 rounded-md bg-primary/20" />
+                  <div className="w-full aspect-video rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-primary/40">
+                      <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+                    </svg>
                   </div>
-                </div>
-
-                <div className="space-y-2 pt-4">
-                  <div className="text-xs text-muted-foreground uppercase">Progress</div>
-                  <div className="space-y-1">
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
-                       <div className="h-3 w-3 rounded-full bg-muted-foreground/60"></div>
-                       <span>Streak & XP</span>
-                     </div>
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
-                       <div className="h-3 w-3 rounded-full bg-muted-foreground/50"></div>
-                       <span>Achievements</span>
-                     </div>
-                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
-                       <div className="h-3 w-3 rounded-full bg-muted-foreground/40"></div>
-                       <span>Leaderboard</span>
-                     </div>
+                  <div className="space-y-2">
+                    <div className="h-3 rounded bg-foreground/5 w-full" />
+                    <div className="h-3 rounded bg-foreground/5 w-3/4" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div key={i} className="h-20 rounded-xl bg-card border border-border flex items-center justify-center">
+                        <div className="w-10 h-3 rounded bg-foreground/5" />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-
-              {/* Main Content */}
-              <div className="flex-1 p-4 bg-background overflow-hidden">
-                {/* Board Header */}
-                <div className="flex items-center justify-between mb-6 min-w-0">
-                   <div className="flex items-center gap-2 flex-shrink-0">
-                     <h3 className="font-medium text-foreground">Learning Queue</h3>
-                     <span className="text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">8</span>
-                   </div>
-
-                  <div className="flex items-center gap-2 flex-shrink-0">
-                    <div className="h-8 w-8 rounded-md bg-muted flex items-center justify-center text-muted-foreground">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 12H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        <path d="M12 9L12 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div className="h-8 w-8 rounded-md bg-muted flex items-center justify-center text-muted-foreground">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 9L17 17H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M17 17L7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                     <div className="h-8 px-3 rounded-md bg-foreground text-background flex items-center justify-center text-sm font-medium whitespace-nowrap">
-                       Import Video
-                     </div>
-                  </div>
-                </div>
-
-                {/* Kanban Board */}
-                <div className="overflow-hidden">
-                  <TaskBoard />
-                </div>
-              </div>
+              {/* Glow accent */}
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-16 rounded-full bg-primary/15 blur-2xl" />
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
