@@ -72,7 +72,7 @@ const HowItWorks = () => {
                 <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-foreground text-background text-xs font-bold mb-3">
                   {step.number}
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                <h3 className="font-bold text-lg mb-2">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
                   {step.description}
                 </p>

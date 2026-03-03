@@ -61,7 +61,7 @@ export default {
 			},
 			fontFamily: {
 				'young-serif': ['Young Serif', 'serif'],
-				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
+				'sans': ['Nunito', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
 			},
 			letterSpacing: {
 				'tighter': '-0.05em',

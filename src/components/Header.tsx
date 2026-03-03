@@ -24,7 +24,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-8">
           <a
             href="/#features"
-            className={`text-sm font-medium transition-colors hover:text-foreground ${
+            className={`text-base lowercase transition-colors hover:text-foreground ${
               isActive('/') ? 'text-foreground' : 'text-muted-foreground'
             }`}
           >
@@ -32,7 +32,7 @@ const Header = () => {
           </a>
           <Link
             to="/blog"
-            className={`text-sm font-medium transition-colors hover:text-foreground ${
+            className={`text-base lowercase transition-colors hover:text-foreground ${
               location.pathname.startsWith('/blog') ? 'text-foreground' : 'text-muted-foreground'
             }`}
           >
@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
           <a
             href="#download"
-            className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-2 text-sm font-medium transition-all hover:bg-foreground/90 hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-2 text-base font-extrabold lowercase transition-all hover:bg-foreground/90 hover:scale-[1.02] active:scale-[0.98]"
           >
             Get Retell
           </a>
@@ -73,21 +73,21 @@ const Header = () => {
         <div className="md:hidden border-t border-border px-6 py-4 bg-background space-y-3">
           <a
             href="/#features"
-            className="block text-sm font-medium text-foreground py-2"
+            className="block text-base lowercase text-foreground py-2"
             onClick={() => setMobileOpen(false)}
           >
             Features
           </a>
           <Link
             to="/blog"
-            className="block text-sm font-medium text-foreground py-2"
+            className="block text-base lowercase text-foreground py-2"
             onClick={() => setMobileOpen(false)}
           >
             Blog
           </Link>
           <a
             href="#download"
-            className="block text-center rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium"
+            className="block text-center rounded-full bg-foreground text-background px-5 py-2.5 text-base font-extrabold lowercase"
             onClick={() => setMobileOpen(false)}
           >
             Get Retell

@@ -74,7 +74,7 @@ const BlogPost = () => {
               }
               if (trimmed.startsWith('### ')) {
                 return (
-                  <h3 key={i} className="font-semibold text-xl mt-8 mb-3 text-foreground">
+                  <h3 key={i} className="font-bold text-xl mt-8 mb-3 text-foreground">
                     {trimmed.slice(4)}
                   </h3>
                 );
@@ -130,7 +130,7 @@ const BlogPost = () => {
             </p>
             <a
               href="/#download"
-              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-6 py-2.5 text-sm font-medium transition-all hover:bg-foreground/90"
+              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-6 py-2.5 text-base font-extrabold lowercase transition-all hover:bg-foreground/90"
             >
               Get Retell — Free
             </a>
@@ -146,7 +146,7 @@ function renderInlineMarkdown(text: string) {
   const parts = text.split(/\*\*(.+?)\*\*/g);
   return parts.map((part, i) =>
     i % 2 === 1 ? (
-      <strong key={i} className="text-foreground font-medium">
+      <strong key={i} className="text-foreground font-semibold">
         {part}
       </strong>
     ) : (

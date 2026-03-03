@@ -39,7 +39,7 @@ const DownloadCTA = () => {
                 </svg>
                 <div className="text-left">
                   <div className="text-[10px] leading-none opacity-80">Download on the</div>
-                  <div className="text-base font-semibold leading-tight">App Store</div>
+                  <div className="text-base font-bold leading-tight">App Store</div>
                 </div>
               </a>
 
@@ -58,7 +58,7 @@ const DownloadCTA = () => {
                 </svg>
                 <div className="text-left">
                   <div className="text-[10px] leading-none opacity-80">Get it on</div>
-                  <div className="text-base font-semibold leading-tight">Google Play</div>
+                  <div className="text-base font-bold leading-tight">Google Play</div>
                 </div>
               </a>
             </div>
