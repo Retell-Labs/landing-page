@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import RetellSmileLogo from '@/components/RetellSmileLogo';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -15,10 +16,7 @@ const HeroSection = () => {
         <div className="reveal" ref={heroRef}>
           {/* Badge */}
           <div className="flex justify-center mb-8">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Free on iOS &amp; Android
-            </span>
+            <RetellSmileLogo className="w-40 h-40" interactive />
           </div>
 
           {/* Headline */}

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import RetellSmileLogo from '@/components/RetellSmileLogo';
 
 const Footer = () => {
   return (
@@ -7,13 +8,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
           {/* Logo + tagline */}
           <div className="max-w-xs">
-            <Link to="/" className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <span className="font-young-serif text-lg text-foreground">Retell</span>
+            <Link to="/" className="flex items-center gap-3 mb-3">
+              <RetellSmileLogo className="w-9 h-9" />
+              <span className="font-young-serif text-2xl text-foreground">Retell</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Learn languages from the content you already watch. AI-powered lessons, spaced repetition, and pronunciation practice.
