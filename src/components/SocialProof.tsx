@@ -13,8 +13,10 @@ const SocialProof = () => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add('visible'); },
-      { threshold: 0.3 }
+      ([entry]) => {
+        if (entry.isIntersecting) el.classList.add('visible');
+      },
+      { threshold: 0.3 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -27,9 +29,7 @@ const SocialProof = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16">
             {stats.map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-4">
-                {i > 0 && (
-                  <div className="hidden md:block w-px h-8 bg-border" />
-                )}
+                {i > 0 && <div className="hidden md:block w-px h-8 bg-border" />}
                 <div className="text-center md:text-left">
                   <span className="font-young-serif text-2xl md:text-3xl text-foreground">
                     {stat.value}

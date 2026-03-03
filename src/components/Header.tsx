@@ -47,7 +47,15 @@ const Header = () => {
           className="md:hidden p-2 -mr-2"
           aria-label="Toggle menu"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
             {mobileOpen ? (
               <>
                 <line x1="18" y1="6" x2="6" y2="18" />

@@ -29,7 +29,16 @@ const BlogPost = () => {
               to="/blog"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <polyline points="15 18 9 12 15 6" />
               </svg>
               Back to Blog
@@ -44,9 +53,7 @@ const BlogPost = () => {
             <h1 className="font-young-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1] mb-4">
               {post.title}
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              {post.description}
-            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">{post.description}</p>
             <div className="flex items-center gap-3 text-sm text-muted-foreground border-b border-border pb-6">
               <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString('en-US', {
@@ -67,7 +74,10 @@ const BlogPost = () => {
               if (!trimmed) return <br key={i} />;
               if (trimmed.startsWith('## ')) {
                 return (
-                  <h2 key={i} className="font-young-serif text-2xl md:text-3xl mt-12 mb-4 text-foreground">
+                  <h2
+                    key={i}
+                    className="font-young-serif text-2xl md:text-3xl mt-12 mb-4 text-foreground"
+                  >
                     {trimmed.slice(3)}
                   </h2>
                 );
@@ -83,7 +93,10 @@ const BlogPost = () => {
                 const match = trimmed.match(/^- \*\*(.+?)\*\*:?\s*(.*)$/);
                 if (match) {
                   return (
-                    <li key={i} className="text-muted-foreground leading-relaxed ml-4 mb-2 list-disc">
+                    <li
+                      key={i}
+                      className="text-muted-foreground leading-relaxed ml-4 mb-2 list-disc"
+                    >
                       <strong className="text-foreground">{match[1]}</strong>
                       {match[2] ? `: ${match[2]}` : ''}
                     </li>
@@ -100,7 +113,10 @@ const BlogPost = () => {
               const numMatch = trimmed.match(/^(\d+)\.\s+\*\*(.+?)\*\*:?\s*(.*)$/);
               if (numMatch) {
                 return (
-                  <li key={i} className="text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal">
+                  <li
+                    key={i}
+                    className="text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal"
+                  >
                     <strong className="text-foreground">{numMatch[2]}</strong>
                     {numMatch[3] ? `: ${numMatch[3]}` : ''}
                   </li>
@@ -109,7 +125,10 @@ const BlogPost = () => {
               const numMatch2 = trimmed.match(/^(\d+)\.\s+(.*)$/);
               if (numMatch2) {
                 return (
-                  <li key={i} className="text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal">
+                  <li
+                    key={i}
+                    className="text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal"
+                  >
                     {renderInlineMarkdown(numMatch2[2])}
                   </li>
                 );
@@ -151,7 +170,7 @@ function renderInlineMarkdown(text: string) {
       </strong>
     ) : (
       part
-    )
+    ),
   );
 }
 

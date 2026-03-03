@@ -7,7 +7,11 @@ type RetellSmileLogoProps = {
   interactive?: boolean;
 };
 
-const RetellSmileLogo = ({ className, title = 'Retell logo', interactive = false }: RetellSmileLogoProps) => {
+const RetellSmileLogo = ({
+  className,
+  title = 'Retell logo',
+  interactive = false,
+}: RetellSmileLogoProps) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [faceOffset, setFaceOffset] = useState({ x: 0, y: 0 });
   const [eyeOffset, setEyeOffset] = useState({ x: 0, y: 0 });
@@ -108,7 +112,7 @@ const RetellSmileLogo = ({ className, title = 'Retell logo', interactive = false
   }, [interactive]);
 
   const eyeCenterY = 25;
-  const eyeHalfHeight = 7 * blinkAmount;
+  const eyeHalfHeight = 5 * blinkAmount;
   const eyeTop = eyeCenterY - eyeHalfHeight;
   const eyeBottom = eyeCenterY + eyeHalfHeight;
   const mouthPath = 'M18 41C24 48 40 48 46 41';
@@ -123,8 +127,24 @@ const RetellSmileLogo = ({ className, title = 'Retell logo', interactive = false
       className={cn('h-8 w-8', className)}
     >
       <g transform={`translate(${faceOffset.x} ${faceOffset.y})`}>
-        <line x1={26 + eyeOffset.x} y1={eyeTop + eyeOffset.y} x2={26 + eyeOffset.x} y2={eyeBottom + eyeOffset.y} stroke="#000000" strokeWidth="6" strokeLinecap="round" />
-        <line x1={38 + eyeOffset.x} y1={eyeTop + eyeOffset.y} x2={38 + eyeOffset.x} y2={eyeBottom + eyeOffset.y} stroke="#000000" strokeWidth="6" strokeLinecap="round" />
+        <line
+          x1={26 + eyeOffset.x}
+          y1={eyeTop + eyeOffset.y}
+          x2={26 + eyeOffset.x}
+          y2={eyeBottom + eyeOffset.y}
+          stroke="#000000"
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
+        <line
+          x1={38 + eyeOffset.x}
+          y1={eyeTop + eyeOffset.y}
+          x2={38 + eyeOffset.x}
+          y2={eyeBottom + eyeOffset.y}
+          stroke="#000000"
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
         <path d={mouthPath} stroke="#000000" strokeWidth="6" strokeLinecap="round" fill="none" />
       </g>
     </svg>

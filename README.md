@@ -4,16 +4,16 @@ Marketing website and blog for the Retell language learning app. Clubhouse-inspi
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Build | Vite 5 |
-| Framework | React 18 |
-| Language | TypeScript |
-| Styling | Tailwind CSS 3 + shadcn/ui |
-| Routing | React Router v6 |
-| Fonts | Inter (sans) + Young Serif (serif headings) |
-| Package Manager | Yarn 4 |
-| Deployment | Vercel |
+| Layer           | Technology                                  |
+| --------------- | ------------------------------------------- |
+| Build           | Vite 5                                      |
+| Framework       | React 18                                    |
+| Language        | TypeScript                                  |
+| Styling         | Tailwind CSS 3 + shadcn/ui                  |
+| Routing         | React Router v6                             |
+| Fonts           | Inter (sans) + Young Serif (serif headings) |
+| Package Manager | Yarn 4                                      |
+| Deployment      | Vercel                                      |
 
 ## Getting Started
 
@@ -40,22 +40,22 @@ yarn preview
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `yarn dev` | Start dev server with HMR |
-| `yarn build` | Production build |
-| `yarn build:dev` | Development mode build |
-| `yarn preview` | Preview production build locally |
-| `yarn lint` | ESLint |
+| Command          | Description                      |
+| ---------------- | -------------------------------- |
+| `yarn dev`       | Start dev server with HMR        |
+| `yarn build`     | Production build                 |
+| `yarn build:dev` | Development mode build           |
+| `yarn preview`   | Preview production build locally |
+| `yarn lint`      | ESLint                           |
 
 ## Routes
 
-| Path | Page | Description |
-|------|------|-------------|
-| `/` | Index | Landing page (hero, features, social proof, how it works, download CTA) |
-| `/blog` | BlogIndex | Blog listing with article cards |
-| `/blog/:slug` | BlogPost | Individual blog post with markdown rendering |
-| `*` | NotFound | 404 page |
+| Path          | Page      | Description                                                             |
+| ------------- | --------- | ----------------------------------------------------------------------- |
+| `/`           | Index     | Landing page (hero, features, social proof, how it works, download CTA) |
+| `/blog`       | BlogIndex | Blog listing with article cards                                         |
+| `/blog/:slug` | BlogPost  | Individual blog post with markdown rendering                            |
+| `*`           | NotFound  | 404 page                                                                |
 
 ## Page Structure
 
@@ -72,6 +72,7 @@ yarn preview
 ### Blog (`/blog`, `/blog/:slug`)
 
 Blog content is defined in `src/data/blog-posts.ts`. Current articles:
+
 - How to Learn Languages from TikTok Videos
 - Spaced Repetition: The Science of Never Forgetting
 - Pronunciation Tips That Actually Work

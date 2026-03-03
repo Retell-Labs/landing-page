@@ -3,27 +3,56 @@ import { useRef, useEffect } from 'react';
 const features = [
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <polygon points="23 7 16 12 23 17 23 7" />
         <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
       </svg>
     ),
     title: 'Import Any Video',
-    description: 'Share a TikTok, YouTube Short, or Instagram Reel. Pick a photo or video from your camera roll. We handle the rest.',
+    description:
+      'Share a TikTok, YouTube Short, or Instagram Reel. Pick a photo or video from your camera roll. We handle the rest.',
   },
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z" />
         <line x1="9" y1="22" x2="15" y2="22" />
       </svg>
     ),
     title: 'AI-Powered Lessons',
-    description: 'Our AI transcribes, analyzes, and creates a personalized lesson: vocabulary, key phrases, grammar notes, and practice sentences.',
+    description:
+      'Our AI transcribes, analyzes, and creates a personalized lesson: vocabulary, key phrases, grammar notes, and practice sentences.',
   },
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
         <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
         <line x1="12" y1="19" x2="12" y2="23" />
@@ -31,7 +60,8 @@ const features = [
       </svg>
     ),
     title: 'Practice Speaking',
-    description: 'Record yourself, get word-by-word pronunciation scores. AI evaluates your fluency and gives real-time feedback.',
+    description:
+      'Record yourself, get word-by-word pronunciation scores. AI evaluates your fluency and gives real-time feedback.',
   },
 ];
 
@@ -42,8 +72,10 @@ const Features = () => {
     const el = sectionRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add('visible'); },
-      { threshold: 0.15 }
+      ([entry]) => {
+        if (entry.isIntersecting) el.classList.add('visible');
+      },
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();

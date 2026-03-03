@@ -20,6 +20,7 @@ Single-page marketing/landing site for Retell (language learning app), built wit
 ### Routing
 
 `src/App.tsx` sets up React Router v6 with routes:
+
 - `/` — Landing page (Index)
 - `/blog` — Blog listing page (BlogIndex)
 - `/blog/:slug` — Individual blog post (BlogPost)

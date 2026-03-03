@@ -10,11 +10,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
 
-  const {
-    threshold = 0.1,
-    rootMargin = '0px 0px -100px 0px',
-    triggerOnce = true,
-  } = options;
+  const { threshold = 0.1, rootMargin = '0px 0px -100px 0px', triggerOnce = true } = options;
 
   useEffect(() => {
     const element = elementRef.current;
@@ -34,7 +30,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
       {
         threshold,
         rootMargin,
-      }
+      },
     );
 
     observer.observe(element);
