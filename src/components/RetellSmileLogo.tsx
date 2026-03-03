@@ -115,7 +115,7 @@ const RetellSmileLogo = ({
   const eyeHalfHeight = 5 * blinkAmount;
   const eyeTop = eyeCenterY - eyeHalfHeight;
   const eyeBottom = eyeCenterY + eyeHalfHeight;
-  const mouthPath = 'M18 41C24 48 40 48 46 41';
+  const mouthPath = 'M19 42C25 49 39 49 45 42';
 
   return (
     <svg

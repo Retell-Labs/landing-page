@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo + tagline */}
           <div className="max-w-xs">
             <Link to="/" className="flex items-center gap-3 mb-3">
-              <RetellSmileLogo className="w-9 h-9" />
+              <RetellSmileLogo className="w-9 h-9" interactive={false} />
               <span className="font-young-serif text-2xl text-foreground">Retell</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
