@@ -22,7 +22,7 @@ const HeroSection = () => {
         </div>
 
         {/* Headline */}
-        <h1 className="mt-8 font-young-serif text-4xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight text-center max-w-3xl opacity-0 animate-fade-in-up animation-delay-100">
+        <h1 className="mt-3 font-young-serif text-4xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight text-center max-w-3xl opacity-0 animate-fade-in-up animation-delay-100">
           Learn languages from your life.
         </h1>
 
