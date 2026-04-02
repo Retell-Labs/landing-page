@@ -12,11 +12,7 @@ const Header = () => {
       {/* Pill nav */}
       <nav className="flex items-center justify-between gap-1 rounded-full bg-background/80 backdrop-blur-xl shadow-card border border-border/50 px-2 py-2">
         {/* Logo */}
-        <Link
-          to="/"
-          className="flex items-center px-3 py-1 rounded-full"
-          aria-label="Retell Home"
-        >
+        <Link to="/" className="flex items-center px-3 py-1 rounded-full" aria-label="Retell Home">
           <span className="font-young-serif text-lg text-foreground">Retell</span>
         </Link>
 

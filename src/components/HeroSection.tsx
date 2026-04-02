@@ -18,7 +18,7 @@ const HeroSection = () => {
       >
         {/* Big smile face */}
         <div className="opacity-0 animate-fade-in-up">
-          <RetellSmileLogo className="w-32 h-32 md:w-40 md:h-40" interactive />
+          <RetellSmileLogo className="w-32 h-32 md:w-40 md:h-40 text-retell-gold" interactive />
         </div>
 
         {/* Headline */}

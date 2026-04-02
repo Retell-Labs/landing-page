@@ -145,7 +145,13 @@ const RetellSmileLogo = ({
           strokeWidth="6"
           strokeLinecap="round"
         />
-        <path d={mouthPath} stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none" />
+        <path
+          d={mouthPath}
+          stroke="currentColor"
+          strokeWidth="6"
+          strokeLinecap="round"
+          fill="none"
+        />
       </g>
     </svg>
   );

@@ -27,8 +27,8 @@ const DownloadCTA = () => {
         >
           <span className="text-6xl leading-none text-white/30 font-bold">&ldquo;</span>
           <p className="text-xl md:text-2xl font-semibold text-white leading-relaxed mt-2">
-            I started learning Korean from drama clips I was already watching. Now I can follow whole
-            conversations without subtitles.
+            I started learning Korean from drama clips I was already watching. Now I can follow
+            whole conversations without subtitles.
           </p>
           <p className="text-sm text-white/60 mt-6">&mdash; Sarah M., Retell user</p>
         </div>
@@ -37,7 +37,7 @@ const DownloadCTA = () => {
         <div
           className={`bg-retell-navy rounded-3xl p-10 md:p-12 flex flex-col justify-center transition-all duration-300 hover:shadow-elevated ${visible ? 'opacity-0 animate-fade-in-up animation-delay-200' : 'opacity-0'}`}
         >
-          <RetellSmileLogo className="w-10 h-10 text-white" interactive={false} />
+          <RetellSmileLogo className="w-10 h-10 text-retell-gold" interactive={false} />
           <h2 className="font-young-serif text-3xl md:text-4xl text-retell-gold mt-6">
             Start learning for free
           </h2>
