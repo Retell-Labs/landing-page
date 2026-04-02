@@ -20,6 +20,14 @@ export default {
     },
     extend: {
       colors: {
+        'retell-navy': '#003262',
+        'retell-gold': '#FDB515',
+        'retell-violet': '#7B61FF',
+        'retell-pink': '#FF6B9D',
+        'retell-sky': '#3B7EA1',
+        'retell-lime': '#B4E455',
+        'retell-coral': '#D9661F',
+        'retell-dark': '#121212',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -65,6 +73,11 @@ export default {
       },
       letterSpacing: {
         tighter: '-0.05em',
+      },
+      boxShadow: {
+        soft: '0 4px 20px -4px rgba(0, 0, 0, 0.06)',
+        card: '0 8px 40px -12px rgba(0, 0, 0, 0.1)',
+        elevated: '0 20px 60px -20px rgba(0, 0, 0, 0.16)',
       },
     },
   },

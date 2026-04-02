@@ -8,18 +8,23 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md">
-      <nav className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+    <header className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] md:w-auto">
+      {/* Pill nav */}
+      <nav className="flex items-center justify-between gap-1 rounded-full bg-background/80 backdrop-blur-xl shadow-card border border-border/50 px-2 py-2">
         {/* Logo */}
-        <Link to="/" className="flex items-center py-1" aria-label="Retell Home">
-          <span className="font-young-serif text-2xl text-foreground">Retell</span>
+        <Link
+          to="/"
+          className="flex items-center px-3 py-1 rounded-full"
+          aria-label="Retell Home"
+        >
+          <span className="font-young-serif text-lg text-foreground">Retell</span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop nav links */}
+        <div className="hidden md:flex items-center gap-1">
           <a
             href="/#features"
-            className={`text-base lowercase transition-colors hover:text-foreground ${
+            className={`text-sm lowercase px-4 py-1.5 rounded-full transition-colors hover:bg-foreground/5 ${
               isActive('/') ? 'text-foreground' : 'text-muted-foreground'
             }`}
           >
@@ -27,7 +32,7 @@ const Header = () => {
           </a>
           <Link
             to="/blog"
-            className={`text-base lowercase transition-colors hover:text-foreground ${
+            className={`text-sm lowercase px-4 py-1.5 rounded-full transition-colors hover:bg-foreground/5 ${
               location.pathname.startsWith('/blog') ? 'text-foreground' : 'text-muted-foreground'
             }`}
           >
@@ -35,7 +40,7 @@ const Header = () => {
           </Link>
           <a
             href="#download"
-            className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-2 text-base font-extrabold lowercase transition-all hover:bg-foreground/90 hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-full bg-retell-gold text-retell-navy px-5 py-1.5 text-sm font-bold lowercase transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             Get Retell
           </a>
@@ -44,12 +49,12 @@ const Header = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 -mr-2"
+          className="md:hidden p-2 rounded-full hover:bg-foreground/5"
           aria-label="Toggle menu"
         >
           <svg
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -63,34 +68,34 @@ const Header = () => {
               </>
             ) : (
               <>
-                <line x1="3" y1="8" x2="21" y2="8" />
-                <line x1="3" y1="16" x2="21" y2="16" />
+                <line x1="4" y1="8" x2="20" y2="8" />
+                <line x1="4" y1="16" x2="20" y2="16" />
               </>
             )}
           </svg>
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile dropdown */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border px-6 py-4 bg-background space-y-3">
+        <div className="md:hidden mt-2 rounded-2xl bg-background/95 backdrop-blur-xl shadow-card border border-border/50 px-4 py-3 space-y-1">
           <a
             href="/#features"
-            className="block text-base lowercase text-foreground py-2"
+            className="block text-sm lowercase text-foreground py-2 px-3 rounded-xl hover:bg-foreground/5"
             onClick={() => setMobileOpen(false)}
           >
             Features
           </a>
           <Link
             to="/blog"
-            className="block text-base lowercase text-foreground py-2"
+            className="block text-sm lowercase text-foreground py-2 px-3 rounded-xl hover:bg-foreground/5"
             onClick={() => setMobileOpen(false)}
           >
             Blog
           </Link>
           <a
             href="#download"
-            className="block text-center rounded-full bg-foreground text-background px-5 py-2.5 text-base font-extrabold lowercase"
+            className="block text-center rounded-full bg-retell-gold text-retell-navy px-5 py-2.5 text-sm font-bold lowercase mt-2"
             onClick={() => setMobileOpen(false)}
           >
             Get Retell

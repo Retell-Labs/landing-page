@@ -132,7 +132,7 @@ const RetellSmileLogo = ({
           y1={eyeTop + eyeOffset.y}
           x2={26 + eyeOffset.x}
           y2={eyeBottom + eyeOffset.y}
-          stroke="#000000"
+          stroke="currentColor"
           strokeWidth="6"
           strokeLinecap="round"
         />
@@ -141,11 +141,11 @@ const RetellSmileLogo = ({
           y1={eyeTop + eyeOffset.y}
           x2={38 + eyeOffset.x}
           y2={eyeBottom + eyeOffset.y}
-          stroke="#000000"
+          stroke="currentColor"
           strokeWidth="6"
           strokeLinecap="round"
         />
-        <path d={mouthPath} stroke="#000000" strokeWidth="6" strokeLinecap="round" fill="none" />
+        <path d={mouthPath} stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none" />
       </g>
     </svg>
   );
