@@ -57,11 +57,8 @@ const HeroSection = () => {
             className="inline-flex items-center gap-3 bg-white/10 text-white border border-white/20 rounded-full px-7 py-4 font-bold text-sm transition-all hover:scale-105 hover:bg-white/15 active:scale-100"
             aria-label="Get it on Google Play"
           >
-            <svg width="18" height="20" viewBox="0 0 20 22" fill="currentColor">
-              <path d="M0.35 0.63C0.13 0.87 0 1.22 0 1.67v18.66c0 0.45 0.13 0.8 0.35 1.04l0.05 0.05 10.45-10.45v-0.25L0.4 0.58 0.35 0.63z" />
-              <path d="M14.33 14.44l-3.48-3.48v-0.25l3.48-3.48 0.08 0.04 4.12 2.34c1.18 0.67 1.18 1.76 0 2.43l-4.12 2.34-0.08 0.06z" />
-              <path d="M14.41 14.38L10.85 10.82 0.35 21.37c0.39 0.41 1.03 0.46 1.76 0.05l12.3-7.04z" />
-              <path d="M14.41 7.27L2.11 0.23C1.38-0.18 0.74-0.13 0.35 0.28l10.5 10.54 3.56-3.55z" />
+            <svg width="18" height="20" viewBox="0 0 512 512" fill="currentColor">
+              <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
             </svg>
             Download for Android
           </a>
