@@ -54,8 +54,8 @@ const BlogIndex = () => {
         </section>
 
         {/* Featured post */}
-        <section className="px-6 md:px-16">
-          <div className="max-w-6xl mx-auto">
+        <section className="px-3 md:px-5">
+          <div className="max-w-6xl mx-auto px-8 md:px-16">
             <Link
               to={`/blog/${featured.slug}`}
               className="group block border-t border-border/40 pt-10 pb-16 opacity-0 animate-fade-in-up animation-delay-200"
@@ -71,7 +71,7 @@ const BlogIndex = () => {
                   })}
                 </time>
               </div>
-              <h2 className="font-young-serif text-xl md:text-2xl lg:text-3xl leading-[1.15] text-foreground/90 group-hover:text-primary transition-colors max-w-3xl">
+              <h2 className="font-extrabold text-xl md:text-2xl lg:text-3xl leading-snug text-foreground/90 group-hover:text-primary transition-colors max-w-3xl">
                 {featured.title}
               </h2>
               <p className="mt-3 text-muted-foreground text-sm leading-relaxed max-w-2xl">
@@ -85,8 +85,8 @@ const BlogIndex = () => {
         </section>
 
         {/* Grid */}
-        <section ref={gridRef} className="px-6 md:px-16 pb-24 md:pb-40">
-          <div className="max-w-6xl mx-auto">
+        <section ref={gridRef} className="px-3 md:px-5 pb-24 md:pb-40">
+          <div className="max-w-6xl mx-auto px-8 md:px-16">
             <div className="border-t border-border/40 pt-10" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
               {rest.map((post, index) => (
