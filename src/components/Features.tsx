@@ -34,7 +34,7 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Card A — Phone Preview (tall, gold light) */}
           <div
-            className={`${cardBase} bg-retell-navy text-white flex flex-col items-center justify-center ${cardHover} order-3 md:order-1 lg:row-span-2 p-6 ${animClass('animation-delay-100')}`}
+            className={`${cardBase} bg-retell-navy text-white flex flex-col items-center justify-center ${cardHover} order-1 md:order-1 lg:row-span-2 p-6 ${animClass('animation-delay-100')}`}
           >
             <p className="text-xs font-semibold text-white/50 tracking-widest uppercase mb-4">
               See it in action
@@ -78,7 +78,7 @@ const Features = () => {
 
           {/* Card B — Import Any Video (purple light) */}
           <div
-            className={`${cardBase} bg-[#B8A4F0] ${cardHover} order-1 md:order-2 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-200')}`}
+            className={`${cardBase} bg-[#B8A4F0] ${cardHover} order-2 md:order-2 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-200')}`}
           >
             <div>
               <p className="text-xs font-bold tracking-widest uppercase text-[#431170]/60 mb-3">
@@ -96,7 +96,7 @@ const Features = () => {
 
           {/* Card C — AI-Powered Lessons (blue light) */}
           <div
-            className={`${cardBase} bg-[#6BB3F0] hover:shadow-elevated hover:-translate-y-1 order-2 md:order-3 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-300')}`}
+            className={`${cardBase} bg-[#6BB3F0] hover:shadow-elevated hover:-translate-y-1 order-3 md:order-3 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-300')}`}
           >
             <div>
               <p className="text-xs font-bold tracking-widest uppercase text-[#010133]/60 mb-3">
