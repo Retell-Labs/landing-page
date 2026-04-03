@@ -55,7 +55,7 @@ const DownloadCTA = () => {
                 href="https://apps.apple.com/app/retell"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-retell-gold text-retell-navy rounded-full px-7 py-4 font-bold text-sm transition-all hover:scale-105 hover:shadow-elevated active:scale-100"
+                className="inline-flex items-center justify-center gap-3 bg-retell-gold text-retell-navy rounded-full px-7 py-4 font-bold text-sm transition-all hover:scale-105 hover:shadow-elevated active:scale-100 w-full sm:w-auto sm:min-w-[220px]"
                 aria-label="Download on the App Store"
               >
                 <svg width="18" height="22" viewBox="0 0 22 26" fill="currentColor">
@@ -67,7 +67,7 @@ const DownloadCTA = () => {
                 href="https://play.google.com/store/apps/details?id=com.retell.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-white/10 text-white border border-white/20 rounded-full px-7 py-4 font-bold text-sm transition-all hover:scale-105 hover:bg-white/15 active:scale-100"
+                className="inline-flex items-center justify-center gap-3 bg-white/10 text-white border border-white/20 rounded-full px-7 py-4 font-bold text-sm transition-all hover:scale-105 hover:bg-white/15 active:scale-100 w-full sm:w-auto sm:min-w-[220px]"
                 aria-label="Get it on Google Play"
               >
                 <svg width="16" height="18" viewBox="0 0 512 512" fill="currentColor">
