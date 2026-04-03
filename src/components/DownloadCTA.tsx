@@ -19,8 +19,14 @@ const DownloadCTA = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 md:py-24 px-3 md:px-5">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+    <section ref={ref} className="pb-16 md:pb-24 px-3 md:px-5">
+      <div className="max-w-6xl mx-auto">
+        <h2
+          className={`text-center text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
+          What people are saying
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Testimonial Card (coral) */}
         <div
           className={`bg-retell-coral rounded-3xl p-10 md:p-12 flex flex-col justify-center transition-all duration-300 hover:shadow-card ${visible ? 'opacity-0 animate-fade-in-up animation-delay-100' : 'opacity-0'}`}
@@ -70,6 +76,7 @@ const DownloadCTA = () => {
               Download for Android
             </a>
           </div>
+        </div>
         </div>
       </div>
     </section>

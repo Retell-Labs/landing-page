@@ -22,10 +22,6 @@ export default {
       colors: {
         'retell-navy': '#003262',
         'retell-gold': '#FDB515',
-        'retell-violet': '#7B61FF',
-        'retell-pink': '#FF6B9D',
-        'retell-sky': '#3B7EA1',
-        'retell-lime': '#B4E455',
         'retell-coral': '#D9661F',
         'retell-dark': '#121212',
         border: 'hsl(var(--border))',
