@@ -9,7 +9,10 @@ const Header = () => {
 
   return (
     <header className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-auto">
-      <nav className="flex items-center gap-1 rounded-full bg-background/80 backdrop-blur-xl shadow-card border border-border/50 px-2 py-2 transition-all duration-300">
+      <nav
+        className="flex items-center gap-1 rounded-full bg-background/80 backdrop-blur-xl border border-border/50 px-2 py-2 transition-all duration-300"
+        style={{ boxShadow: '0 4px 30px rgba(0, 0, 0, 0.15)' }}
+      >
         {/* Logo */}
         <Link to="/" className="flex items-center px-3 py-1 rounded-full" aria-label="Retell Home">
           <span className="font-young-serif text-lg text-retell-navy">Retell</span>

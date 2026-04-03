@@ -74,6 +74,7 @@ export default {
         soft: '0 4px 20px -4px rgba(0, 0, 0, 0.06)',
         card: '0 8px 40px -12px rgba(0, 0, 0, 0.1)',
         elevated: '0 20px 60px -20px rgba(0, 0, 0, 0.16)',
+        'nav-light': '0 8px 40px -8px rgba(0, 0, 0, 0.2)',
       },
     },
   },
