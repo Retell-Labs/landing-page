@@ -34,18 +34,18 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Card A — Phone Preview (tall, gold light) */}
           <div
-            className={`${cardBase} bg-[#FFE88D] text-retell-navy flex flex-col items-center justify-center ${cardHover} order-3 md:order-1 lg:row-span-2 p-6 ${animClass('animation-delay-100')}`}
+            className={`${cardBase} bg-retell-navy text-white flex flex-col items-center justify-center ${cardHover} order-3 md:order-1 lg:row-span-2 p-6 ${animClass('animation-delay-100')}`}
           >
-            <p className="text-xs font-semibold text-[#C09748] tracking-widest uppercase mb-4">
+            <p className="text-xs font-semibold text-white/50 tracking-widest uppercase mb-4">
               See it in action
             </p>
             <div className="relative w-[200px] h-[400px] md:w-[220px] md:h-[440px] animate-float">
-              <div className="absolute inset-0 rounded-[2.5rem] border-[6px] border-retell-navy/10 bg-white shadow-elevated overflow-hidden">
+              <div className="absolute inset-0 rounded-[2.5rem] border-[6px] border-white/20 bg-white shadow-elevated overflow-hidden">
                 <div className="h-10 bg-white flex items-center justify-center">
                   <div className="w-16 h-4 rounded-full bg-retell-navy/10" />
                 </div>
                 <div className="px-4 pt-3 space-y-3">
-                  <div className="w-20 h-5 rounded-md bg-retell-gold/30" />
+                  <div className="w-20 h-5 rounded-md bg-retell-gold/40" />
                   <div className="w-full aspect-video rounded-xl bg-retell-navy/5 flex items-center justify-center">
                     <svg
                       width="28"
@@ -179,7 +179,7 @@ const Features = () => {
 
           {/* Card F — Stats (full width, gold light) */}
           <div
-            className={`${cardBase} bg-[#FFE88D] text-retell-navy md:col-span-2 lg:col-span-3 hover:shadow-card order-6 ${animClass('animation-delay-600')}`}
+            className={`${cardBase} bg-retell-gold text-retell-navy md:col-span-2 lg:col-span-3 hover:shadow-card order-6 ${animClass('animation-delay-600')}`}
           >
             <div className="flex flex-col sm:flex-row items-center justify-around gap-6 sm:gap-0">
               {[
