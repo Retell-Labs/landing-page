@@ -78,13 +78,13 @@ const Features = () => {
 
           {/* Card B — Import Any Video (purple light) */}
           <div
-            className={`${cardBase} bg-[#D9CEFF] ${cardHover} order-1 md:order-2 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-200')}`}
+            className={`${cardBase} bg-[#B8A4F0] ${cardHover} order-1 md:order-2 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-200')}`}
           >
             <div>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#8236C7]/60 mb-3">Video Import</p>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight">Import Any Video</h3>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#431170]/60 mb-3">Video Import</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#431170] leading-tight">Import Any Video</h3>
             </div>
-            <p className="mt-4 text-sm text-[#8236C7]/60 leading-relaxed">
+            <p className="mt-4 text-sm text-[#431170]/60 leading-relaxed">
               Share a TikTok, YouTube Short, or Instagram Reel. Pick a photo or video from your
               camera roll. We handle the rest.
             </p>
@@ -92,13 +92,13 @@ const Features = () => {
 
           {/* Card C — AI-Powered Lessons (blue light) */}
           <div
-            className={`${cardBase} bg-[#9FD1FF] hover:shadow-elevated hover:-translate-y-1 order-2 md:order-3 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-300')}`}
+            className={`${cardBase} bg-[#6BB3F0] hover:shadow-elevated hover:-translate-y-1 order-2 md:order-3 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-300')}`}
           >
             <div>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#004AAE]/60 mb-3">AI Lessons</p>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight">AI-Powered Lessons</h3>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#010133]/60 mb-3">AI Lessons</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#010133] leading-tight">AI-Powered Lessons</h3>
             </div>
-            <p className="mt-4 text-sm text-[#004AAE]/60 leading-relaxed">
+            <p className="mt-4 text-sm text-[#010133]/60 leading-relaxed">
               Our AI transcribes, analyzes, and creates a personalized lesson: vocabulary, key
               phrases, grammar notes, and practice sentences.
             </p>
@@ -106,13 +106,13 @@ const Features = () => {
 
           {/* Card D — Practice Speaking (rose light) */}
           <div
-            className={`${cardBase} bg-[#FFCFE5] ${cardHover} order-4 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-400')}`}
+            className={`${cardBase} bg-[#FFA4CC] ${cardHover} order-4 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-400')}`}
           >
             <div>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#E7115E]/60 mb-3">Speaking</p>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight">Practice Speaking</h3>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#770747]/60 mb-3">Speaking</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#770747] leading-tight">Practice Speaking</h3>
             </div>
-            <p className="mt-4 text-sm text-[#E7115E]/60 leading-relaxed">
+            <p className="mt-4 text-sm text-[#770747]/60 leading-relaxed">
               Record yourself, get word-by-word pronunciation scores. AI evaluates your fluency and
               gives real-time feedback.
             </p>
@@ -120,11 +120,11 @@ const Features = () => {
 
           {/* Card E — How It Works (green light) */}
           <div
-            className={`${cardBase} bg-[#B3E59A] ${cardHover} order-5 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-500')}`}
+            className={`${cardBase} bg-[#7FCC6B] ${cardHover} order-5 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-500')}`}
           >
             <div>
               <p className="text-xs font-bold tracking-widest uppercase text-[#00553A]/60 mb-3">3 Steps</p>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight mb-6">How It Works</h3>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#00553A] leading-tight mb-6">How It Works</h3>
             </div>
             <div className="flex flex-col gap-4">
               {[
