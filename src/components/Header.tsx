@@ -37,7 +37,7 @@ const Header = () => {
             Blog
           </Link>
           <a
-            href="#download"
+            href="/#download"
             className="inline-flex items-center justify-center rounded-full bg-retell-gold text-retell-navy px-5 py-1.5 text-sm font-bold lowercase transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             Get Retell
@@ -65,7 +65,7 @@ const Header = () => {
             Blog
           </Link>
           <a
-            href="#download"
+            href="/#download"
             className="inline-flex items-center justify-center rounded-full bg-retell-gold text-retell-navy px-5 py-1.5 text-sm font-bold lowercase whitespace-nowrap"
             onClick={() => setMobileOpen(false)}
           >
