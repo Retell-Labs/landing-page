@@ -78,25 +78,13 @@ const Features = () => {
 
           {/* Card B — Import Any Video (purple light) */}
           <div
-            className={`${cardBase} bg-[#D9CEFF] text-retell-navy ${cardHover} order-1 md:order-2 ${animClass('animation-delay-200')}`}
+            className={`${cardBase} bg-[#D9CEFF] ${cardHover} order-1 md:order-2 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-200')}`}
           >
-            <div className="w-12 h-12 bg-white/50 rounded-2xl flex items-center justify-center mb-5">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8236C7"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polygon points="23 7 16 12 23 17 23 7" />
-                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-              </svg>
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#8236C7]/60 mb-3">Video Import</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight">Import Any Video</h3>
             </div>
-            <h3 className="text-xl font-bold text-[#8236C7]">Import Any Video</h3>
-            <p className="mt-2 text-sm text-retell-navy/60 leading-relaxed">
+            <p className="mt-4 text-sm text-[#8236C7]/60 leading-relaxed">
               Share a TikTok, YouTube Short, or Instagram Reel. Pick a photo or video from your
               camera roll. We handle the rest.
             </p>
@@ -104,25 +92,13 @@ const Features = () => {
 
           {/* Card C — AI-Powered Lessons (blue light) */}
           <div
-            className={`${cardBase} bg-[#9FD1FF] text-retell-navy hover:shadow-elevated hover:-translate-y-1 order-2 md:order-3 ${animClass('animation-delay-300')}`}
+            className={`${cardBase} bg-[#9FD1FF] hover:shadow-elevated hover:-translate-y-1 order-2 md:order-3 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-300')}`}
           >
-            <div className="w-12 h-12 bg-white/50 rounded-2xl flex items-center justify-center mb-5">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#004AAE"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z" />
-                <line x1="9" y1="22" x2="15" y2="22" />
-              </svg>
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#004AAE]/60 mb-3">AI Lessons</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight">AI-Powered Lessons</h3>
             </div>
-            <h3 className="text-xl font-bold text-[#004AAE]">AI-Powered Lessons</h3>
-            <p className="mt-2 text-sm text-retell-navy/60 leading-relaxed">
+            <p className="mt-4 text-sm text-[#004AAE]/60 leading-relaxed">
               Our AI transcribes, analyzes, and creates a personalized lesson: vocabulary, key
               phrases, grammar notes, and practice sentences.
             </p>
@@ -130,27 +106,13 @@ const Features = () => {
 
           {/* Card D — Practice Speaking (rose light) */}
           <div
-            className={`${cardBase} bg-[#FFCFE5] text-retell-navy ${cardHover} order-4 ${animClass('animation-delay-400')}`}
+            className={`${cardBase} bg-[#FFCFE5] ${cardHover} order-4 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-400')}`}
           >
-            <div className="w-12 h-12 bg-white/50 rounded-2xl flex items-center justify-center mb-5">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#E7115E"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                <line x1="12" y1="19" x2="12" y2="23" />
-                <line x1="8" y1="23" x2="16" y2="23" />
-              </svg>
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#E7115E]/60 mb-3">Speaking</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight">Practice Speaking</h3>
             </div>
-            <h3 className="text-xl font-bold text-[#E7115E]">Practice Speaking</h3>
-            <p className="mt-2 text-sm text-retell-navy/60 leading-relaxed">
+            <p className="mt-4 text-sm text-[#E7115E]/60 leading-relaxed">
               Record yourself, get word-by-word pronunciation scores. AI evaluates your fluency and
               gives real-time feedback.
             </p>
@@ -158,9 +120,12 @@ const Features = () => {
 
           {/* Card E — How It Works (green light) */}
           <div
-            className={`${cardBase} bg-[#B3E59A] text-retell-navy ${cardHover} order-5 ${animClass('animation-delay-500')}`}
+            className={`${cardBase} bg-[#B3E59A] ${cardHover} order-5 flex flex-col justify-between min-h-[240px] ${animClass('animation-delay-500')}`}
           >
-            <h3 className="text-lg font-bold text-[#00553A] mb-6">How it works</h3>
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#00553A]/60 mb-3">3 Steps</p>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-retell-dark leading-tight mb-6">How It Works</h3>
+            </div>
             <div className="flex flex-col gap-4">
               {[
                 { step: '1', label: 'Share a video or photo' },
@@ -171,7 +136,7 @@ const Features = () => {
                   <div className="w-9 h-9 bg-[#00553A] text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">
                     {item.step}
                   </div>
-                  <span className="text-sm font-medium">{item.label}</span>
+                  <span className="text-sm font-semibold text-[#00553A]">{item.label}</span>
                 </div>
               ))}
             </div>
