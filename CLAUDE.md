@@ -30,7 +30,7 @@ Wraps the app in QueryClientProvider (TanStack React Query), TooltipProvider, an
 
 ### Page Composition
 
-`src/pages/Index.tsx` composes the landing page: Header → HeroSection → Features → SocialProof → HowItWorks → DownloadCTA → Footer.
+`src/pages/Index.tsx` composes the landing page: Header → HeroSection → Features → DownloadCTA → Footer.
 
 Blog pages (`BlogIndex`, `BlogPost`) share Header + Footer. Blog content is defined in `src/data/blog-posts.ts`.
 
@@ -41,6 +41,12 @@ Blog pages (`BlogIndex`, `BlogPost`) share Header + Footer. Blog content is defi
 - **Animations:** CSS-based scroll reveal (`.reveal` / `.stagger-children` classes) using IntersectionObserver in components
 - **Noise texture:** `.noise-bg` class adds subtle fractalNoise SVG overlay
 - Respects `prefers-reduced-motion` media query
+
+### SEO & GEO
+
+- `index.html` contains comprehensive meta tags (Open Graph, Twitter Card, geo-targeting) and JSON-LD structured data (MobileApplication, Organization, FAQPage)
+- `public/robots.txt` allows all search engines, social crawlers, and AI/generative engine crawlers
+- Blog pages set `document.title` dynamically
 
 ### Key Utilities
 

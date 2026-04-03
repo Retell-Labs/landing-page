@@ -64,10 +64,8 @@ yarn preview
 1. **Header** — Logo + nav (Features, Blog) + "Get Retell" pill button
 2. **Hero** — Headline, subtitle, App Store/Google Play buttons, phone mockup
 3. **Features** — 3 cards: Import Any Video, AI-Powered Lessons, Practice Speaking
-4. **Social Proof** — Stats strip (10,000+ learners, 12+ languages, 50,000+ lessons)
-5. **How It Works** — 3 steps: Share a video → AI creates your lesson → Practice & level up
-6. **Download CTA** — "Start learning for free" with download buttons
-7. **Footer** — Logo, links (Product, Legal, Connect), social icons, copyright
+4. **Download CTA** — "Start learning for free" with download buttons
+5. **Footer** — Logo, links (Product, Legal, Connect), social icons, copyright
 
 ### Blog (`/blog`, `/blog/:slug`)
 
@@ -76,6 +74,14 @@ Blog content is defined in `src/data/blog-posts.ts`. Current articles:
 - How to Learn Languages from TikTok Videos
 - Spaced Repetition: The Science of Never Forgetting
 - Pronunciation Tips That Actually Work
+
+## SEO & GEO
+
+- **Meta tags:** Comprehensive Open Graph, Twitter Card, and geo-targeting meta in `index.html`
+- **Structured data:** JSON-LD schemas for MobileApplication, Organization, and FAQPage
+- **robots.txt:** Allows all search engines, social crawlers, and AI/generative engine crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.)
+- **Sitemap:** Referenced at `https://retell.app/sitemap.xml`
+- **Blog SEO:** Each blog page sets `document.title` dynamically with branded suffix
 
 ## Design
 
@@ -96,8 +102,6 @@ landing-page/
 │   │   ├── Header.tsx
 │   │   ├── HeroSection.tsx
 │   │   ├── Features.tsx
-│   │   ├── SocialProof.tsx
-│   │   ├── HowItWorks.tsx
 │   │   ├── DownloadCTA.tsx
 │   │   ├── Footer.tsx
 │   │   └── ui/                    # shadcn/ui components
@@ -115,7 +119,9 @@ landing-page/
 │   ├── App.tsx                     # Router setup
 │   ├── main.tsx                    # Entry point
 │   └── index.css                   # Theme variables + animations
-├── index.html                      # SEO meta tags + JSON-LD
+├── index.html                      # SEO meta tags + JSON-LD schemas
+├── public/
+│   └── robots.txt                  # Crawler permissions
 ├── tailwind.config.ts
 ├── vite.config.ts
 ├── tsconfig.json
