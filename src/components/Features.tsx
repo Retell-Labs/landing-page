@@ -17,7 +17,7 @@ const Features = () => {
     return () => observer.disconnect();
   }, []);
 
-  const cardBase = 'rounded-3xl p-8 transition-all duration-300';
+  const cardBase = 'rounded-[2rem] md:rounded-[2.5rem] p-8 transition-all duration-300';
   const cardHover = 'hover:shadow-card hover:-translate-y-1';
   const animClass = (delay: string) =>
     visible ? `opacity-0 animate-fade-in-up ${delay}` : 'opacity-0';

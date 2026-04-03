@@ -29,7 +29,7 @@ const DownloadCTA = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Testimonial Card (coral) */}
           <div
-            className={`bg-retell-coral rounded-3xl p-10 md:p-12 flex flex-col justify-center transition-all duration-300 hover:shadow-card ${visible ? 'opacity-0 animate-fade-in-up animation-delay-100' : 'opacity-0'}`}
+            className={`bg-retell-coral rounded-[2rem] md:rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-center transition-all duration-300 hover:shadow-card ${visible ? 'opacity-0 animate-fade-in-up animation-delay-100' : 'opacity-0'}`}
           >
             <span className="text-6xl leading-none text-white/30 font-bold">&ldquo;</span>
             <p className="text-xl md:text-2xl font-semibold text-white leading-relaxed mt-2">
@@ -41,7 +41,7 @@ const DownloadCTA = () => {
 
           {/* Download CTA Card (navy) */}
           <div
-            className={`bg-retell-navy rounded-3xl p-10 md:p-12 flex flex-col justify-center transition-all duration-300 hover:shadow-elevated ${visible ? 'opacity-0 animate-fade-in-up animation-delay-200' : 'opacity-0'}`}
+            className={`bg-retell-navy rounded-[2rem] md:rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-center transition-all duration-300 hover:shadow-elevated ${visible ? 'opacity-0 animate-fade-in-up animation-delay-200' : 'opacity-0'}`}
           >
             <RetellSmileLogo className="w-10 h-10 text-retell-gold" interactive={false} />
             <h2 className="font-young-serif text-3xl md:text-4xl text-retell-gold mt-6">

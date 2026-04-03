@@ -78,7 +78,7 @@ const BlogPost = () => {
               <span>{post.readTime}</span>
             </div>
 
-            <h1 className="font-young-serif text-3xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-foreground/90 opacity-0 animate-fade-in-up animation-delay-100">
+            <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-foreground/90 opacity-0 animate-fade-in-up animation-delay-100">
               {post.title}
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl opacity-0 animate-fade-in-up animation-delay-200">
@@ -99,7 +99,7 @@ const BlogPost = () => {
                   return (
                     <h2
                       key={i}
-                      className="font-young-serif text-2xl md:text-3xl mt-14 mb-6 text-foreground"
+                      className="font-extrabold text-2xl md:text-3xl mt-14 mb-6 text-foreground"
                     >
                       {trimmed.slice(3)}
                     </h2>
@@ -170,10 +170,10 @@ const BlogPost = () => {
             {/* CTA */}
             <div
               ref={ctaRef}
-              className={`mt-20 rounded-3xl bg-retell-navy p-8 md:p-12 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`mt-20 rounded-[2rem] md:rounded-[2.5rem] bg-retell-navy p-8 md:p-12 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
               <RetellSmileLogo className="w-10 h-10 text-retell-gold" interactive={false} />
-              <h3 className="font-young-serif text-3xl md:text-4xl text-retell-gold mt-6">
+              <h3 className="font-extrabold text-3xl md:text-4xl text-retell-gold mt-6">
                 Ready to start learning?
               </h3>
               <p className="text-sm text-white/50 mt-3 mb-8 max-w-sm">

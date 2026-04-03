@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     title: 'How to Learn Languages from TikTok Videos',
     description:
       "TikTok isn't just for entertainment. Discover how short-form video content can accelerate your language learning with the right approach and tools.",
-    date: '2025-01-15',
+    date: '2026-03-28',
     readTime: '6 min read',
     category: 'Learning Tips',
     content: `
@@ -85,7 +85,7 @@ TikTok and short-form video aren't distractions from language learning — they'
     title: 'Spaced Repetition: The Science of Never Forgetting',
     description:
       'Learn how the SM-2 algorithm and spaced repetition systems can help you remember vocabulary permanently, not just for the next quiz.',
-    date: '2025-01-08',
+    date: '2026-03-18',
     readTime: '5 min read',
     category: 'Science',
     content: `
@@ -174,7 +174,7 @@ Retell automatically creates SRS flashcards from every lesson, complete with aud
     title: 'Pronunciation Tips That Actually Work',
     description:
       'Stop sounding like a textbook. These evidence-based pronunciation techniques will help you sound more natural in any language.',
-    date: '2024-12-20',
+    date: '2026-03-05',
     readTime: '7 min read',
     category: 'Speaking',
     content: `
